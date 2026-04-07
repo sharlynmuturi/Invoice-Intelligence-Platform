@@ -27,7 +27,7 @@ cd Invoice-Intelligence-Platform
 ### 2\. Install Dependencies
 
 ```bash
-pip install -r requirements.txt
+pip install -r full-requirements.txt
 ```
 
 #### 3. Generate Data

@@ -3,11 +3,19 @@ import pandas as pd
 import numpy as np
 import joblib
 
+from pathlib import Path
 
-freight_model = joblib.load("artifacts/freight_predictor.pkl")
-anomaly_model = joblib.load("artifacts/anomaly_detector.pkl")
-scaler = joblib.load("artifacts/anomaly_scaler.pkl")
-iso_model = joblib.load("artifacts/iso_forest.pkl")  
+BASE_DIR = Path(__file__).parent
+
+freight_model_path = BASE_DIR / "artifacts" / "freight_predictor.pkl"
+anomaly_model_path = BASE_DIR / "artifacts" / "anomaly_detector.pkl"
+scaler_path = BASE_DIR / "artifacts" / "anomaly_scaler.pkl"
+iso_model_path = BASE_DIR / "artifacts" / "iso_forest.pkl"
+
+freight_model = joblib.load(freight_model_path)
+anomaly_model = joblib.load(anomaly_model_path)
+scaler = joblib.load(scaler_path)
+iso_model = joblib.load(iso_model_path)  
 
 st.set_page_config(page_title="Invoice Operations Dashboard", layout="wide")
 st.title("Invoice Operations Dashboard")
