@@ -56,8 +56,8 @@ Freight is driven mainly by:
 
 #### Anomaly Detection System
 
-Supervised Model - **Random Forest Classifier**
-Unsupervised Model - **Isolation Forest**
+- Supervised Model - **Random Forest Classifier**
+- Unsupervised Model - **Isolation Forest**
 
 ### How to Run
 
