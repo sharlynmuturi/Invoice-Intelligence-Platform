@@ -15,6 +15,50 @@ Can be used by:
 - **Finance Team** - Detect overbilling early, prioritize invoice audits
 - **Operations** - Identify inefficient vendors, monitor logistics cost drivers
 
+#### Generated Tables
+
+| Table | Description |
+| --- | --- |
+| purchase_prices | Product catalog with vendor mapping |
+| purchases | Line-level purchase transactions |
+| vendor_invoice | Aggregated invoices per PO |
+| begin_inventory / end_inventory | Inventory snapshots |
+
+#### Feature Engineering
+
+##### Freight Prediction Features
+
+| Feature | Meaning |
+| --- | --- |
+| quantity | Shipment size |
+| log_quantity | Reduces skew |
+| vendor_distance | Transport cost driver |
+| relative_order_size | Order vs vendor average |
+| qty_distance_interaction | Core cost driver |
+
+##### Anomaly Detection Features
+
+| Feature | Meaning |
+| --- | --- |
+| invoice_ratio | Invoice vs item-level total |
+| freight_per_unit | Cost efficiency |
+| quantity_per_brand | Complexity indicator |
+| relative_order_size | Abnormal order size |
+| log_invoice_dollars | Stabilized scale |
+
+
+#### Freight Prediction Model - Random Forest Regressor
+
+Freight is driven mainly by:
+- Distance × Quantity interaction
+- Order size context
+
+
+#### Anomaly Detection System
+
+Supervised Model - **Random Forest Classifier**
+Unsupervised Model - **Isolation Forest**
+
 ### How to Run
 
 #### 1. Clone Repository
