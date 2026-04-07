@@ -11,9 +11,9 @@ This project builds an **end-to-end data science pipeline** for:
 
 Can be used by:
 
-**Procurement Team** - Estimate freight before placing orders, optimize vendor selection
-**Finance Team** - Detect overbilling early, prioritize invoice audits
-**Operations** - Identify inefficient vendors, monitor logistics cost drivers
+- **Procurement Team** - Estimate freight before placing orders, optimize vendor selection
+- **Finance Team** - Detect overbilling early, prioritize invoice audits
+- **Operations** - Identify inefficient vendors, monitor logistics cost drivers
 
 ### How to Run
 
