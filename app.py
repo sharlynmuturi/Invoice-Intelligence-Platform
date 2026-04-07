@@ -101,16 +101,16 @@ X_anomaly_scaled = scaler.transform(X_anomaly)
 col1, col2 = st.columns(2)
 
 with col1:
-    if st.button("Check Invoice Risk (Supervised)"):
+    if st.button("Detect Overbilling Risk"):
         risk_prob = anomaly_model.predict_proba(X_anomaly_scaled)[0, 1]
         risk_flag = "Suspicious" if risk_prob > 0.5 else "Normal"
-        st.subheader("Supervised Model Risk")
-        st.metric(label="Suspicious Probability", value=f"{risk_prob:.2f}")
+        st.subheader("Overbilling Risk Assessment")
+        st.metric(label="Risk Score", value=f"{risk_prob:.2f}")
         st.write("Status:", risk_flag)
 
 with col2:
-    if st.button("Check Invoice Risk (Unsupervised)"):
+    if st.button("Detect Unusual Invoice Pattern"):
         iso_flag = iso_model.predict(X_anomaly_scaled)[0]
         iso_status = "Outlier" if iso_flag == -1 else "Normal"
-        st.subheader("Isolation Forest Status")
+        st.subheader("Anomaly Detection Result")
         st.write("Status:", iso_status)
