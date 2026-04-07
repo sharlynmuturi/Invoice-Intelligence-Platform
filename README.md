@@ -47,12 +47,9 @@ Can be used by:
 | log_invoice_dollars | Stabilized scale |
 
 
-#### Freight Prediction Model - Random Forest Regressor
+#### Freight Prediction Model 
 
-Freight is driven mainly by:
-- Distance × Quantity interaction
-- Order size context
-
+- Random Forest Regressor
 
 #### Anomaly Detection System
 
