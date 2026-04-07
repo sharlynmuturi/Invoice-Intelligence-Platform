@@ -12,10 +12,16 @@ anomaly_model_path = BASE_DIR / "artifacts" / "anomaly_detector.pkl"
 scaler_path = BASE_DIR / "artifacts" / "anomaly_scaler.pkl"
 iso_model_path = BASE_DIR / "artifacts" / "iso_forest.pkl"
 
-freight_model = joblib.load(freight_model_path)
-anomaly_model = joblib.load(anomaly_model_path)
-scaler = joblib.load(scaler_path)
-iso_model = joblib.load(iso_model_path)  
+@st.cache_resource
+def load_artifacts():
+    return (
+        joblib.load(freight_model_path),
+        joblib.load(anomaly_model_path),
+        joblib.load(scaler_path),
+        joblib.load(iso_model_path)
+    )
+
+freight_model, anomaly_model, scaler, iso_model = load_artifacts() 
 
 st.set_page_config(page_title="Invoice Operations Dashboard", layout="wide")
 st.title("Invoice Operations Dashboard")
