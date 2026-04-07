@@ -15,7 +15,7 @@ st.title("Invoice Operations Dashboard")
 st.markdown("""
 This dashboard allows teams to:
 - Predict freight costs for new POs.
-- Detect suspicious invoices (supervised & unsupervised).
+- Detect suspicious invoices.
 - Optimize operations by identifying potential overbilling or late invoices.
 """)
 
